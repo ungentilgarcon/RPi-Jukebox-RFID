@@ -4,6 +4,20 @@
 
 [![Gitter chat](https://badges.gitter.im/phoniebox/gitter.png)](https://gitter.im/phoniebox)
 
+#THIS IS  A PHONIEBOX IMPLEMENTATION TO RUN  FILES IN FOLDERS.
+
+EACH FOLDER EQUALS A LANGUAGE
+
+SAME SET OF FILES IN DIFFERENT LANGUAGES EXIST IN EACH FOLDER ,
+
+SELECTION IS DONE VIA ASSOCIATION OF A LANGUAGE CARD AND A SENTENCE CARD
+
+MODS ARE DONE ONLY TO THE PHP  CARD FILES AND THE PYTHON PLAYER FILE? REST OF THE PROJECT AIMS AT BEING COMPATIBLE WITH THE EVOLUTIONS OF RPi-JUKEBOX FOR BETTER MAINTANABILITY"
+
+<3 <3 <3
+
+
+
 # Phoniebox: the RPi-Jukebox-RFID
 
 A contactless jukebox for the Raspberry Pi, playing audio files, playlists, podcasts, web streams and spotify triggered by RFID cards. All plug and play via USB, no soldering iron needed. Update: if you must, it now also features a howto for adding GPIO buttons controls.
