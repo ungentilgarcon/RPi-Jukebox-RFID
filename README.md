@@ -4,7 +4,7 @@
 
 [![Gitter chat](https://badges.gitter.im/phoniebox/gitter.png)](https://gitter.im/phoniebox)
 
-#THIS IS  A PHONIEBOX IMPLEMENTATION TO RUN  FILES IN FOLDERS.
+# THIS IS  A PHONIEBOX IMPLEMENTATION TO RUN  FILES IN FOLDERS.
 
 EACH FOLDER EQUALS A LANGUAGE
 
