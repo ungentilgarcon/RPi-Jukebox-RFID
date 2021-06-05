@@ -139,12 +139,15 @@ $lang['cardRegisterTriggerSuccess'] = "The card is now linked to trigger the com
 * Card edit form
 */
 $lang['cardFormFolderLegend'] = "Link RFID to:";
-$lang['cardFormFolderLabel'] = "Link card to existing audio folder";
+$lang['cardFormFolderLabel'] = "Link card to existing audio folder (Language)";
 $lang['cardFormFolderSelectDefault'] = "None (pulldown to select a folder)";
-$lang['cardFormFolderHelp'] = "Containing local files or add YouTube content (specify below).";
+$lang['cardFormFolderHelp'] = "Containing local files (SAME NAMING OF FILES FOR EACH LANGUAGE) or add YouTube content (specify below).";
 $lang['cardFormNewFolderLabel'] = "... or link a new folder";
-$lang['cardFormNewFolderHelp'] = "Always use a new folder for streams (see below) and optionally for YouTube.";
-$lang['cardFormNewFolderPlaceholder'] = "e.g. 'Artist Name/Album'";
+$lang['cardFormNewFolderHelp'] = "ONE FOLDER FOR EACH LANGUAGE Always use a new folder for streams (see below) and optionally for YouTube.";
+$lang['cardFormNewFolderPlaceholder'] = "e.g. 'RUSSE'";
+$lang['cardFormNewFileLabel'] = "... or link a new file in folder";
+$lang['cardFormNewFileHelp'] = "Files in each folder always link to the same sentence in a different language (01..02..03..).";
+$lang['cardFormNewFilePlaceholder'] = "e.g. '(01..02..03..)'";
 $lang['cardFormTriggerLegend'] = "Trigger system command";
 $lang['cardFormTriggerLabel'] = "... or link to a system command";
 $lang['cardFormTriggerHelp'] = "Select system commands (like 'pause', 'volume up', 'shutdown') from the list of available commands. If a RFID card is already linked to a function, the ID is shown in the pulldown menu.";

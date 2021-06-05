@@ -2,14 +2,14 @@
 
 ?>
         <form name='volume' method='post' action='<?php print $_SERVER['PHP_SELF']; ?>'>
-        
-        <fieldset> 
+
+        <fieldset>
         <legend><?php print $lang['globalCardId']; ?></legend>
         <!-- Text input-->
         <div class="form-group">
-          <label class="col-md-4 control-label" for="streamURL"><?php print $fdata['streamURL_label']; ?></label>  
+          <label class="col-md-4 control-label" for="streamURL"><?php print $fdata['streamURL_label']; ?></label>
           <div class="col-md-6">
-          
+
 <?php
 if($fdata['streamURL_ajax'] == "true") {
     print "<span id=\"refresh_id\"></span>";
@@ -22,19 +22,19 @@ if($fdata['streamURL_ajax'] == "true") {
 
 }
 ?>
-          
-          <span class="help-block"><?php print $fdata['streamURL_help']; ?></span>  
+
+          <span class="help-block"><?php print $fdata['streamURL_help']; ?></span>
           </div>
         </div>
         </fieldset>
-        
+
 <!-----------------------------------------
 - Folder link
 -->
-        <fieldset>        
+        <fieldset>
         <!-- Form Name -->
         <legend><?php print $lang['cardFormFolderLegend']; ?></legend>
-        
+
         <!-- Select Basic -->
         <div class="form-group">
           <label class="col-md-4 control-label" for="audiofolder"><?php print $lang['cardFormFolderLabel']; ?></label>
@@ -63,27 +63,45 @@ foreach($audiofolders as $keyfolder => $audiofolder) {
 }
 ?>
             </select>
-          <span class="help-block"><?php print $lang['cardFormFolderHelp']; ?></span>  
-          </div>          
+          <span class="help-block"><?php print $lang['cardFormFolderHelp']; ?></span>
+          </div>
         </div>
-        
+
         <!-- Text input-->
         <div class="form-group">
-          <label class="col-md-4 control-label" for="audiofolderNew"><?php print $lang['cardFormNewFolderLabel']; ?></label>  
+          <label class="col-md-4 control-label" for="audiofolderNew"><?php print $lang['cardFormNewFolderLabel']; ?></label>
           <div class="col-md-6">
           <input value="<?php
           if (isset($fpost['audiofolderNew'])) {
               print $fpost['audiofolderNew'];
           }
           ?>" id="audiofolderNew" name="audiofolderNew" placeholder="<?php print $lang['cardFormNewFolderPlaceholder']; ?>" class="form-control input-md" type="text">
-          <span class="help-block"><?php print $lang['cardFormNewFolderHelp']; ?></span>  
+          <span class="help-block"><?php print $lang['cardFormNewFolderHelp']; ?></span>
           </div>
         </div>
-        
+
+        <!-----------------------------------------
+        - Trigger for file in folder
+        -->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="audiofileNew"><?php print $lang['cardFormNewFileLabel']; ?></label>
+          <div class="col-md-6">
+          <input value="<?php
+          if (isset($fpost['audiofileNew'])) {
+              print $fpost['audiofileNew'];
+          }
+          ?>" id="audiofileNew" name="audiofileNew" placeholder="<?php print $lang['cardFormNewFilePlaceholder']; ?>" class="form-control input-md" type="text">
+          <span class="help-block"><?php print $lang['cardFormNewFileHelp']; ?></span>
+          </div>
+        </div>
+
+
+
+
 <!-----------------------------------------
 - Trigger for system function (like volume up, pause, shutdown)
 -->
-               
+
         <!-- Select Basic -->
         <div class="form-group">
           <label class="col-md-4 control-label" for="TriggerCommand"><?php print $lang['cardFormTriggerLabel']; ?></label>
@@ -92,7 +110,7 @@ foreach($audiofolders as $keyfolder => $audiofolder) {
               <option value="false"<?php if(!isset($fpost['TriggerCommand'])) { print " selected=selected"; } ?>><?php print $lang['cardFormTriggerSelectDefault']; ?></option>
 <?php
 
-// create form fields 
+// create form fields
 $fn = fopen("../settings/rfid_trigger_play.conf.sample","r");
 $counter = 1;
 
@@ -136,37 +154,37 @@ while(! feof($fn))  {
 fclose($fn);
 ?>
             </select>
-            <span class="help-block"><?php print $lang['cardFormTriggerHelp']; ?></span>  
+            <span class="help-block"><?php print $lang['cardFormTriggerHelp']; ?></span>
           </div>
-        </div>  
+        </div>
         </fieldset>
-        
+
 <!-----------------------------------------
 - Stream (radio, podcast)
 -->
-        <fieldset>        
+        <fieldset>
         <!-- Form Name -->
         <legend><?php print $lang['cardFormStreamLegend']; ?></legend>
-        
+
         <!-- Text input-->
         <div class="form-group">
-          <label class="col-md-4 control-label" for="streamURL"><?php print $lang['cardFormStreamLabel']; ?></label>  
+          <label class="col-md-4 control-label" for="streamURL"><?php print $lang['cardFormStreamLabel']; ?></label>
           <div class="col-md-6">
           <input value="<?php
           if (isset($fpost['streamURL'])) {
               print $fpost['streamURL'];
           }
-          ?>" id="streamURL" name="streamURL" placeholder="<?php 
-		  if ($edition == "plusSpotify") { 
-		  print $lang['cardFormStreamPlaceholderPlusSpotify']; 
-		  } else { 
-		  print $lang['cardFormStreamPlaceholderClassic']; 
-		  } 
+          ?>" id="streamURL" name="streamURL" placeholder="<?php
+		  if ($edition == "plusSpotify") {
+		  print $lang['cardFormStreamPlaceholderPlusSpotify'];
+		  } else {
+		  print $lang['cardFormStreamPlaceholderClassic'];
+		  }
 		  ?>" class="form-control input-md" type="text">
-          <span class="help-block"><?php print $lang['cardFormStreamHelp']; ?></span>  
+          <span class="help-block"><?php print $lang['cardFormStreamHelp']; ?></span>
           </div>
         </div>
-        
+
         <!-- Select Basic -->
         <div class="form-group">
           <label class="col-md-4 control-label" for="streamType"></label>
@@ -185,39 +203,39 @@ fclose($fn);
               <option value='livestream'<?php if($fpost['streamType'] == "livestream") { print " selected=selected"; } ?>>Web radio / live stream</option>
               <option value='other'<?php if($fpost['streamType'] == "other") { print " selected=selected"; } ?>>Other</option>
             </select>
-            <span class="help-block"><?php print $lang['cardFormStreamTypeHelp']; ?></span>  
+            <span class="help-block"><?php print $lang['cardFormStreamTypeHelp']; ?></span>
           </div>
         </div>
-        
+
         </fieldset>
 
 
 <!-----------------------------------------
 - YouTube
 -->
-        <fieldset>        
+        <fieldset>
         <!-- Form Name -->
         <legend><?php print $lang['cardFormYTLegend']; ?></legend>
-        
+
         <!-- Text input-->
         <div class="form-group">
-          <label class="col-md-4 control-label" for="YTstreamURL"><?php print $lang['cardFormYTLabel']; ?></label>  
+          <label class="col-md-4 control-label" for="YTstreamURL"><?php print $lang['cardFormYTLabel']; ?></label>
           <div class="col-md-6">
           <input value="<?php
           if (isset($fpost['YTstreamURL'])) {
               print $fpost['YTstreamURL'];
           }
           ?>" id="YTstreamURL" name="YTstreamURL" placeholder="<?php print $lang['cardFormYTPlaceholder']; ?>" class="form-control input-md" type="text">
-          <span class="help-block"><?php print $lang['cardFormYTHelp']; ?></span>  
+          <span class="help-block"><?php print $lang['cardFormYTHelp']; ?></span>
           </div>
         </div>
-        
-        
+
+
         </fieldset>
-              
-        
+
+
         </fieldset>
-        
+
         <!-- Button (Double) -->
         <div class="form-group">
           <label class="col-md-4 control-label" for="submit"></label>
