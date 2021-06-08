@@ -330,8 +330,8 @@ if [ "$CARDID" ]; then
                 DOSSIER=$FOLDERORCMD;
               fi
                 echo "DETECTED A FILE TO PLAY/MP"
-                RESULT=$"(cat $PATHDATA/../shared/audiofolders/$FOLDERORCMD/url.txt)"#WE DETECTED A COMMAND STRING SO WE REPLACE THE WILDCARD WITH THE LANGUAGE STRING
-                fichierA_Lire=$"($RESULT | sed -e "s/$(DOSSIER)/LANGAGE/g")"
+                RESULT=$(cat $PATHDATA/../shared/audiofolders/$FOLDERORCMD/url.txt) #WE DETECTED A COMMAND STRING SO WE REPLACE THE WILDCARD WITH THE LANGUAGE STRING
+                fichierA_Lire=$($RESULT | sed -e "s/$(DOSSIER)/LANGAGE/g")
                 omxplayer fichierA_Lire;
 
 fi
