@@ -331,9 +331,7 @@ if [ "$CARDID" ]; then
 
                 RESULT=$"(cat $PATHDATA/../shared/audiofolders/$FOLDERORCMD/url.txt)"#WE DETECTED A COMMAND STRING SO WE REPLACE THE WILDCARD WITH THE LANGUAGE STRING
                 fichierA_Lire=$"($RESULT | sed -e "s/$(DOSSIER)/LANGAGE/g")"
-                mpc clear
-                mpc add fichierA_Lire
-                mpc play
+                omxplayer fichierA_Lire
 
 
 
