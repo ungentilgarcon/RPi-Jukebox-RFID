@@ -32,6 +32,10 @@ NOW=`date +%Y-%m-%d.%H:%M:%S`
 # Unless you are working with symlinks, leave the following line untouched.
 PATHDATA="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
+
+###ICI ON CREE UN INDEX DES LANGUES PARLEES
+fileItemString=$(cat  $PATHDATA/../shared/LANGUES.txt |tr "\n" " ")
+LANGUESARRAY=($fileItemString)
 #############################################################
 # $DEBUG TRUE|FALSE
 # Read debug logging configuration file
@@ -315,7 +319,22 @@ if [ "$CARDID" ]; then
             # Look for human readable shortcut in folder 'shortcuts'
             # check if CARDID has a text file by the same name - which would contain the human readable folder name
             if [ -f $PATHDATA/../shared/shortcuts/$CARDID ]
+
+
             then
+              FOLDERORCMD=`cat $PATHDATA/../shared/shortcuts/$CARDID`
+              if printf '%s\n' "${LANGUESARRAY[@]}" | grep -q -P '^$FOLDERORCMD$';
+              then
+                #WE DETECTED A  LANGUAGE STRING SO WE NEED TO CHANGE THE FOLDER VARIABLE
+                DOSSIER=$FOLDERORCMD
+  fi
+
+                RESULT=$"(cat $PATHDATA/../shared/audiofolders/$FOLDERORCMD/url.txt)"#WE DETECTED A COMMAND STRING SO WE REPLACE THE WILDCARD WITH THE LANGUAGE STRING
+
+
+#WHERE WE NEED TO INTERVENE#
+
+
                 # Read human readable shortcut from file
                 FOLDER=`cat $PATHDATA/../shared/shortcuts/$CARDID`
                 # Add info into the log, making it easer to monitor cards
