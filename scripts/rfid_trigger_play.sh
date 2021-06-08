@@ -327,18 +327,33 @@ if [ "$CARDID" ]; then
 
             then
               FOLDERORCMD=`cat $PATHDATA/../shared/shortcuts/$CARDID`
+              for ELEMENT in ${LANGUESARRAY[@]}
+              do
+                echo File: $ELEMENT.
+              done
+##NEED FIXING
+DOS=false
+for i in "${LANGUESARRAY[@]}"
+do
+if [ "$i" == "$FOLDERORCMD" ] ; then
+DOS=true
+echo "Found"
+fi
+done
 
-               if printf '%s\n' "${LANGUESARRAY[@]}" | grep -q -P '^$FOLDERORCMD$';
+
+                 #printf '%s\n' "${LANGUESARRAY[@]}" | grep -q -P '^$(FOLDERORCMD)$';
+             if [ "$DOS" = true ]
               then
                 #WE DETECTED A  LANGUAGE STRING SO WE NEED TO CHANGE THE FOLDER VARIABLE
                 echo "DETECTED A LANGUAGE"
                 DOSSIER=$FOLDERORCMD;
-              fi
+              else
                 echo "DETECTED A FILE TO PLAY/MP"
                 RESULT=$(cat $PATHDATA/../shared/audiofolders/$FOLDERORCMD/url.txt) #WE DETECTED A COMMAND STRING SO WE REPLACE THE WILDCARD WITH THE LANGUAGE STRING
                 fichierA_Lire=$($RESULT | sed -e "s/$(DOSSIER)/LANGAGE/g")
                 omxplayer fichierA_Lire;
-
+              fi
 fi
 esac
 fi
