@@ -33,7 +33,7 @@ NOW=`date +%Y-%m-%d.%H:%M:%S`
 PATHDATA="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 echo $PATHDATA
-###ICI ON CREE UN INDEX DES LANGUES PARLEES
+###ICI ON CREE   UN INDEX DES LANGUES PARLEES
 fileItemString=$(cat  $PATHDATA/../shared/LANGUES.txt |tr "\n" " ")
 LANGUESARRAY=($fileItemString)
 #############################################################
