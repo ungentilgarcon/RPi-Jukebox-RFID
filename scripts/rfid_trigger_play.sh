@@ -35,8 +35,11 @@ PATHDATA="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 ###ICI ON CREE UN INDEX DES LANGUES PARLEES
 fileItemString=$(cat  $PATHDATA/../shared/langues.txt |tr "\n" " ")
+echo fileItemString
+echo $fileItemString
 LANGUESARRAY=($fileItemString)
 echo LANGUESARRAY
+echo $LANGUESARRAY
 #############################################################
 # $DEBUG TRUE|FALSE
 # Read debug logging configuration file
@@ -324,7 +327,7 @@ if [ "$CARDID" ]; then
 
             then
               FOLDERORCMD=`cat $PATHDATA/../shared/shortcuts/$CARDID`
-              
+
                if printf '%s\n' "${LANGUESARRAY[@]}" | grep -q -P '^$FOLDERORCMD$';
               then
                 #WE DETECTED A  LANGUAGE STRING SO WE NEED TO CHANGE THE FOLDER VARIABLE
