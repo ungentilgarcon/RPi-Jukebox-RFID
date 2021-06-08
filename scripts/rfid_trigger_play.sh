@@ -335,7 +335,7 @@ if [ "$CARDID" ]; then
                 omxplayer fichierA_Lire
 
 fi
-
+esac
 
 
 #WHERE WE NEED TO INTERVENE#
