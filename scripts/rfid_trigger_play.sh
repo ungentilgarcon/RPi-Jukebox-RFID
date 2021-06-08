@@ -326,13 +326,15 @@ if [ "$CARDID" ]; then
                if printf '%s\n' "${LANGUESARRAY[@]}" | grep -q -P '^$FOLDERORCMD$';
               then
                 #WE DETECTED A  LANGUAGE STRING SO WE NEED TO CHANGE THE FOLDER VARIABLE
+                echo "DETECTED A LANGUAGE"
                 DOSSIER=$FOLDERORCMD
-  fi
-
+              fi
+                echo "DETECTED A FILE TO PLAY"
                 RESULT=$"(cat $PATHDATA/../shared/audiofolders/$FOLDERORCMD/url.txt)"#WE DETECTED A COMMAND STRING SO WE REPLACE THE WILDCARD WITH THE LANGUAGE STRING
                 fichierA_Lire=$"($RESULT | sed -e "s/$(DOSSIER)/LANGAGE/g")"
                 omxplayer fichierA_Lire
 
+fi
 
 
 
