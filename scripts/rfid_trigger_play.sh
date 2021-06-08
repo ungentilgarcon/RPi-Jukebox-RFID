@@ -34,7 +34,7 @@ PATHDATA="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 
 ###ICI ON CREE UN INDEX DES LANGUES PARLEES
-fileItemString=$(cat  $PATHDATA/../shared/LANGUES.txt |tr "\n" " ")
+fileItemString=$(cat  '$PATHDATA/../shared/LANGUES.txt' |tr "\n" " ")
 LANGUESARRAY=($fileItemString)
 #############################################################
 # $DEBUG TRUE|FALSE
@@ -329,7 +329,7 @@ if [ "$CARDID" ]; then
                 echo "DETECTED A LANGUAGE"
                 DOSSIER=$FOLDERORCMD
               fi
-                echo "DETECTED A FILE TO PLAY"
+                echo "DETECTED A FILE TO PLAY/MP"
                 RESULT=$"(cat $PATHDATA/../shared/audiofolders/$FOLDERORCMD/url.txt)"#WE DETECTED A COMMAND STRING SO WE REPLACE THE WILDCARD WITH THE LANGUAGE STRING
                 fichierA_Lire=$"($RESULT | sed -e "s/$(DOSSIER)/LANGAGE/g")"
                 omxplayer fichierA_Lire
