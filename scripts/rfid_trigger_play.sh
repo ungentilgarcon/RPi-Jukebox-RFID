@@ -32,7 +32,7 @@ NOW=`date +%Y-%m-%d.%H:%M:%S`
 # Unless you are working with symlinks, leave the following line untouched.
 PATHDATA="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-printf($PATHDATA)
+
 parent_path=$( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )
 
 pushd $parent_path
