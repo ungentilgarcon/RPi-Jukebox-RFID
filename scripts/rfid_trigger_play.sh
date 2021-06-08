@@ -32,9 +32,14 @@ NOW=`date +%Y-%m-%d.%H:%M:%S`
 # Unless you are working with symlinks, leave the following line untouched.
 PATHDATA="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-echo $PATHDATA
-###ICI ON CREE   UN INDEX DES LANGUES PARLEES
-fileItemString=$(cat  $PATHDATA/../shared/LANGUES.txt |tr "\n" " ")
+printf($PATHDATA)
+parent_path=$( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )
+
+pushd $parent_path
+cd "$parent_path"
+###ICI ON CREE UN INDEX DES LANGUES PARLEES
+fileItemString=$(cat ../shared/LANGUES.txt |tr "\n" " ")
+popd $parent_path
 LANGUESARRAY=($fileItemString)
 #############################################################
 # $DEBUG TRUE|FALSE
