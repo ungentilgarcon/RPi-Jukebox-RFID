@@ -310,15 +310,9 @@ if($post['delete'] == "delete") {
     }
 
     else {
-      if(isset($post['audiofileNew'])&& trim($post['audiofileNew']) != "") ) {
-    // create new folder
-    $exec = "rm ".$fileshortcuts."; echo '".$post['audiofileNew']."' > ".$fileshortcuts."; chmod 777 ".$fileshortcuts;
-    exec($exec);
-    $messageSuccess = "<p>DONE ".$post['audiofileNew']."' ".$lang['globalCardId']." '".$post['cardID']."'</p>"
-}
+
         /*
-        * Warning given, action can not be taken
-        */
+        * Warning given, action can not be ta      */
     }
 }
 ?>
