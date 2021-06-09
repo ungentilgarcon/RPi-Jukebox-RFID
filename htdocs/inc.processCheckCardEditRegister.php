@@ -310,7 +310,7 @@ if($post['delete'] == "delete") {
     }
 
     else {
-      if(isset($post['audiofileNew'])) {
+      if(isset($post['audiofileNew'])&& trim($post['audiofileNew']) != "") ) {
     // create new folder
     $exec = "rm ".$fileshortcuts."; echo '".$post['audiofileNew']."' > ".$fileshortcuts."; chmod 777 ".$fileshortcuts;
     exec($exec);
