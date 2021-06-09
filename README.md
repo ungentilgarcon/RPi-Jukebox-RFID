@@ -1,6 +1,6 @@
 ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/MiczFlor/RPi-Jukebox-RFID/develop)
 
-![Python Tests](https://github.com/MiczFlor/RPi-Jukebox-RFID/workflows/Python%20package/badge.svg) ![Install Script Tests](https://github.com/MiczFlor/RPi-Jukebox-RFID/workflows/Docker%20Test%20Installation/badge.svg) 
+![Python Tests](https://github.com/MiczFlor/RPi-Jukebox-RFID/workflows/Python%20package/badge.svg) ![Install Script Tests](https://github.com/MiczFlor/RPi-Jukebox-RFID/workflows/Docker%20Test%20Installation/badge.svg)
 
 [![Gitter chat](https://badges.gitter.im/phoniebox/gitter.png)](https://gitter.im/phoniebox)
 
@@ -14,6 +14,11 @@ SELECTION IS DONE VIA ASSOCIATION OF A LANGUAGE CARD AND A SENTENCE CARD
 
 MODS ARE DONE ONLY TO THE PHP  CARD FILES AND THE PYTHON PLAYER FILE? REST OF THE PROJECT AIMS AT BEING COMPATIBLE WITH THE EVOLUTIONS OF RPi-JUKEBOX FOR BETTER MAINTANABILITY"
 
+
+USING MPG123 instead of MPD
+
+AFTER INSTALLING AND SETTING UP AUDIO¨PIRATE, tweak via ./scripts/userscripts/AUDIOPIRATE_CONFIG
+
 <3 <3 <3
 
 
@@ -24,7 +29,7 @@ A contactless jukebox for the Raspberry Pi, playing audio files, playlists, podc
 
 ## The Phoniebox Calendar 2021 is here!!!
 
-Another bunch of wonderful designs! 2021 is the third Phoniebox calendar. If you are interested, you can see the [2019 and 2020 calendars in the docs folder](https://github.com/MiczFlor/RPi-Jukebox-RFID/tree/develop/docs). Download [the printable PDF of 2021 here](https://mi.cz/static/2021-Phoniebox-Calendar.pdf). 
+Another bunch of wonderful designs! 2021 is the third Phoniebox calendar. If you are interested, you can see the [2019 and 2020 calendars in the docs folder](https://github.com/MiczFlor/RPi-Jukebox-RFID/tree/develop/docs). Download [the printable PDF of 2021 here](https://mi.cz/static/2021-Phoniebox-Calendar.pdf).
 
 ![The 2021 Phoniebox Calendar](docs/2021-Phoniebox-Calendar.jpg "The 2021 Phoniebox Calendar")
 
@@ -72,13 +77,13 @@ The [2.2](https://github.com/MiczFlor/RPi-Jukebox-RFID/milestone/4?closed=1) rel
 * Support for **[Spotify](https://github.com/MiczFlor/RPi-Jukebox-RFID/wiki/Spotify-FAQ)** and **[Google Play Music](https://github.com/MiczFlor/RPi-Jukebox-RFID/wiki/Enable-Google-Play-Music-GMusic)** integration.
 * **Podcasts!** More for myself than anybody else, I guess, I added the [podcast feature for Phoniebox](https://github.com/MiczFlor/RPi-Jukebox-RFID/wiki/MANUAL#podcasts) (2018-05-09)
 * [Buttons](https://github.com/MiczFlor/RPi-Jukebox-RFID/wiki/Using-GPIO-hardware-buttons) and [knobs / dials](https://github.com/MiczFlor/RPi-Jukebox-RFID/wiki/Audio-RotaryKnobVolume) to control your **Phoniebox via GPIO**.
-    
+
 ### Quick install
-   
+
 [One line install script](https://github.com/MiczFlor/RPi-Jukebox-RFID/wiki/INSTALL-stretch#one-line-install-command) for Raspbian `buster` available.
 
 * **MUST READ for users of [Phoniebox +Spotify Edition](https://github.com/MiczFlor/RPi-Jukebox-RFID/wiki/Spotify-FAQ)**
-* This install script combines the two versions *Classic* and *+ Spotify*. 
+* This install script combines the two versions *Classic* and *+ Spotify*.
 * *Phoniebox Classic* supports local audio, web radio, podcasts, YouTube (download and convert), GPIO and/or RFID
 
 Documentation can be found in the [GitHub wiki for Phoniebox](https://github.com/MiczFlor/RPi-Jukebox-RFID/wiki). Please try to add content in the wiki regarding special hardware, software tweaks and the like.
@@ -99,7 +104,7 @@ The PDF is about 6MB and will print well on A2 paper size, but it should also lo
 <!--a href="https://www.paypal.com" target="_blank"><img src="https://www.paypalobjects.com/digitalassets/c/website/logo/full-text/pp_fc_hl.svg" width="auto" height="30px"></a-->
 
 If you like your Phoniebox, consider to [buy me a coffee](https://www.buymeacoffee.com/MiczFlor)
-or donate via [PayPal](https://www.paypal.com) to micz.flor@web.de using the *friends* option. 
+or donate via [PayPal](https://www.paypal.com) to micz.flor@web.de using the *friends* option.
 
 ---
 
@@ -113,7 +118,7 @@ or donate via [PayPal](https://www.paypal.com) to micz.flor@web.de using the *fr
 | --- | --- | --- |
 | <a href="https://youtu.be/spHDGSxckmw" target="_blank"><img src="https://i.ytimg.com/vi/spHDGSxckmw/hqdefault.jpg"><br>Installation und Hardware</a> | <a href="https://youtu.be/9ZSKFoWr9WY" target="_blank"><img src="https://i.ytimg.com/vi/9ZSKFoWr9WY/hqdefault.jpg"><br>Web App and Audio / Spotify</a> | <a href="https://youtu.be/YucQuwUD7XE" target="_blank"><img src="https://i.ytimg.com/vi/YucQuwUD7XE/hqdefault.jpg"><br>The finished Phoniebox in action</a> |
 
-A new video screencast about 
+A new video screencast about
 
 **What makes this Phoniebox easy to install and use:**
 
@@ -140,7 +145,7 @@ The **web app** runs on any device and is mobile optimised. It provides:
 
 |  |  |   |   |   |   |
 | --- | --- | --- | --- | --- | --- |
-| ![Caption](docs/img/gallery/Steph-20171215_h90-01.jpg "Caption") | ![Caption](docs/img/gallery/Elsa-20171210_h90-01.jpg "Caption") | ![Caption](docs/img/gallery/Geliras-20171228-Jukebox-01-h90.jpg "Caption") | ![Caption](docs/img/gallery/UlliH-20171210_h90-01.jpg "Caption") | ![Caption](docs/img/gallery/KingKahn-20180101-Jukebox-01-h90.jpg "Caption") | ![Caption](docs/img/gallery/hailogugo-20171222-h90-01.jpg "Caption") | 
+| ![Caption](docs/img/gallery/Steph-20171215_h90-01.jpg "Caption") | ![Caption](docs/img/gallery/Elsa-20171210_h90-01.jpg "Caption") | ![Caption](docs/img/gallery/Geliras-20171228-Jukebox-01-h90.jpg "Caption") | ![Caption](docs/img/gallery/UlliH-20171210_h90-01.jpg "Caption") | ![Caption](docs/img/gallery/KingKahn-20180101-Jukebox-01-h90.jpg "Caption") | ![Caption](docs/img/gallery/hailogugo-20171222-h90-01.jpg "Caption") |
 
 **See more innovation, upcycling and creativity in the [Phoniebox Gallery](https://github.com/MiczFlor/RPi-Jukebox-RFID/wiki/GALLERY) or visit and share the project's homepage at [phoniebox.de](http://phoniebox.de/). There is also an [english Phoniebox page](http://phoniebox.de/index.php?l=en).**
 
@@ -175,16 +180,16 @@ Read the [CONTRIBUTING.md](CONTRIBUTING.md) file for [more infos on how to contr
 
 ## Reporting bugs
 
-To make maintenance easier for everyone, please run the following script 
+To make maintenance easier for everyone, please run the following script
 and post the results when reporting a bug.
 (Note: the results contain some personal information like IP or SSID.
 You might want to erase some of it before sharing with the bug report.)
 ~~~
-/home/pi/RPi-Jukebox-RFID/scripts/helperscripts/Analytics_AfterInstallScript.sh 
+/home/pi/RPi-Jukebox-RFID/scripts/helperscripts/Analytics_AfterInstallScript.sh
 ~~~
 Just copy this line and paste it into your terminal on the pi.
 
-If you find something that doesn't work. And you tried and tried again, but it still doesn't work, please report your issue in the ["issues" section](https://github.com/MiczFlor/RPi-Jukebox-RFID/issues). Make sure to include information about the system and hardware you are using, like: 
+If you find something that doesn't work. And you tried and tried again, but it still doesn't work, please report your issue in the ["issues" section](https://github.com/MiczFlor/RPi-Jukebox-RFID/issues). Make sure to include information about the system and hardware you are using, like:
 
 *Raspberry ZERO, OS Jessie, Card reader lists as (insert here) when running scripts/RegisterDevice.py, installed Phoniebox version 0.9.3 (or: using latest master branch).*
 
@@ -246,7 +251,7 @@ Here is a list of equipment needed. You can find a lot second hand online (save 
 
 * RFID Kit RC522: [RC522 Reader, Chip, Card for Raspberry Pi 13.56MHz] (https://amzn.to/2C7YZCZ)
     * RFID sticker / tags: [MIFARE RFID NFC Tags](https://amzn.to/30GfLDg) untested by me personally, but reported to work with work with RC522 and PN532 card readers.  
-    
+
 ### Speakers / amps
 
 * [USB Stereo Speaker Set (6 Watt, 3,5mm jack, USB-powered) black](http://amzn.to/2kXrard) | This USB powered speaker set sounds good for its size, is good value for money and keeps this RPi project clean and without the need of a soldering iron :)
@@ -264,10 +269,10 @@ Here is a list of equipment needed. You can find a lot second hand online (save 
 
 ### Special hardware
 
-These are links to additional items, which will add an individual flavour to your Phoniebox setup. Consult the issue threads to see if your idea has been realised already. 
+These are links to additional items, which will add an individual flavour to your Phoniebox setup. Consult the issue threads to see if your idea has been realised already.
 
-* [Ground Loop Isolator / Entstörfilter Audio](https://amzn.to/2Kseo0L) this seems to [get rid off crackles in the audio out (a typical RPi problem)](https://github.com/MiczFlor/RPi-Jukebox-RFID/issues/341) 
+* [Ground Loop Isolator / Entstörfilter Audio](https://amzn.to/2Kseo0L) this seems to [get rid off crackles in the audio out (a typical RPi problem)](https://github.com/MiczFlor/RPi-Jukebox-RFID/issues/341)
 * [Mechanical audio switch](https://amzn.to/35oOSCS) if you want to connect differen audio devices, this is the easiest way (in connection with the *Ground Loop Isolator* you will get good results)
-* [Rotary Encoder / Drehregler / Dial](https://amzn.to/2J34guF) for volume control. Read here for more information on how to [integrate the rotary dial](https://github.com/MiczFlor/RPi-Jukebox-RFID/issues/267) 
+* [Rotary Encoder / Drehregler / Dial](https://amzn.to/2J34guF) for volume control. Read here for more information on how to [integrate the rotary dial](https://github.com/MiczFlor/RPi-Jukebox-RFID/issues/267)
 * [HiFiBerry DAC+ Soundcard](https://amzn.to/2J36cU9) Read here for more information on how to [HifiBerry Soundcard integration](https://github.com/MiczFlor/RPi-Jukebox-RFID/wiki/MANUAL#hifiberry-dac-soundcard-details)
 * [HDMI zu HDMI + Optisches SPDIF mit 3,5-mm-Stereo-HDMI Audio-Extractor | HDMI zu SPDIF Konverter](https://amzn.to/2N8KP8C) If you plan to use video, this might be the better solution than a USB soundcard or the hifiberry. If takes up some space, but will work with the HDMI audio out and split the signal to deliver audio through 3.5mm jack.

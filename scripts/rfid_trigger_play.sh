@@ -367,7 +367,7 @@ done
                 fichierA_Lire=$RESULT
                  #WE DETECTED A COMMAND STRING SO WE REPLACE THE WILDCARD WITH THE LANGUAGE STRING
                 #fichierA_Lire=$($RESULT | sed -e "s/$(DOSSIER)/LANGAGE/g")
-                omxplayer $RESULT;
+                mpg123 -a d plughw:0,0 $RESULT;
               fi
 fi
 esac

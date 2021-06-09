@@ -1,0 +1,53 @@
+#from https://www.raspberrypi.org/forums/viewtopic.php?t=151850
+
+
+in /boot/config.txt :
+
+
+dtoverlay=i2s-mmap
+dtoverlay=hifiberry-dac
+#dtparam=audio=on
+dtparam=spi=on
+
+
+in /etc/asound.conf :
+
+pcm.hifiberry {
+    type softvol
+    slave.pcm "plughw:0"
+    control.name "Master"
+    control.card 0
+}
+
+pcm.!default {
+	type plug
+	slave.pcm "softvol"
+}
+
+pcm.softvol {
+	slave {
+		pcm "sysdefault"
+	}
+	control {
+		name "softvol"
+		card 0
+	}
+}
+
+
+in .asoundrc
+
+pcm.!default {
+	type plug
+	slave.pcm "softvol"
+}
+
+pcm.softvol {
+	slave {
+		pcm "sysdefault"
+	}
+	control {
+		name "softvol"
+		card 0
+	}
+}
