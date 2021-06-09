@@ -109,8 +109,8 @@ $messageAction = "";
 $messageSuccess = "";
 
 if($post['delete'] == "delete") {
-    $messageAction .= "<p>The card with the ID '".$post['cardID']." has been deleted.
-        If you made a mistake, this is your chance to press 'Submit' to restore the card settings.
+    $messageAction .= "<p>The card with the ID '".$post['cardID']." has been deleted. 
+        If you made a mistake, this is your chance to press 'Submit' to restore the card settings. 
         Else: Go <a href='index.php' class='mainMenu'><i class='mdi mdi-home'></i> Home</a>.</p>";
     // remove $fileshortcuts to cardID file in shortcuts
     $exec = "rm ".$fileshortcuts;
@@ -118,18 +118,18 @@ if($post['delete'] == "delete") {
         print "<pre>deleting shortcut:\n";
         print $exec;
         print "</pre>";
-    }
+    } 
     exec($exec);
 } elseif($post['submit'] == "submit") {
     /*
     * error check
     */
-
+   
     // posted too little?
     if(
-        (!isset($post['streamURL']) || !isset($post['streamType']))
-        && !isset($post['audiofolder'])
-        && !isset($post['YTstreamURL'])
+        (!isset($post['streamURL']) || !isset($post['streamType'])) 
+        && !isset($post['audiofolder']) 
+        && !isset($post['YTstreamURL']) 
         && !isset($post['TriggerCommand'])
     ) {
         $messageError .= $lang['cardRegisterErrorStreamOrAudio']." (error 002)";
@@ -138,7 +138,6 @@ if($post['delete'] == "delete") {
     $countActions = 0;
     if(isset($post['audiofolder'])) { $countActions++; }
     if(isset($post['audiofolderNew'])) { $countActions++; }
-    if(isset($post['audiofileNew'])) { $countActions++; }
     if(isset($post['TriggerCommand'])) { $countActions++; }
     if($countActions > 1) {
         $messageError .= $lang['cardRegisterErrorStreamAndAudio']." (error 001)";
@@ -162,9 +161,9 @@ if($post['delete'] == "delete") {
     }
 
     // streamFolderName not given
-    if(
-        (isset($post['streamURL']) || isset($post['YTstreamURL']))
-        && !isset($post['audiofolder'])
+    if( 
+        (isset($post['streamURL']) || isset($post['YTstreamURL'])) 
+        && !isset($post['audiofolder']) 
         && !isset($post['audiofolderNew'])
     ) {
         $messageError .= $lang['cardRegisterErrorSuggestFolder']." (error 006)";
@@ -173,7 +172,7 @@ if($post['delete'] == "delete") {
     }
 
     //wrong spotify url, convert to mopidy format
-    if((isset($post['streamURL']) && $post['streamType'] == "spotify") && (strpos($post['streamURL'], "https://open.spotify.com/") !== false)){
+    if((isset($post['streamURL']) && $post['streamType'] == "spotify") && (strpos($post['streamURL'], "https://open.spotify.com/") !== false)){        
         $patterns = array();
         $patterns[0] = '/https\:\/\/open.spotify.com/';
         $patterns[1] = '/\/(playlist|album|track|artist)\//';
@@ -196,31 +195,20 @@ if($post['delete'] == "delete") {
         * do what's asked of us
         */
         $fileshortcuts = $conf['shared_abs']."/shortcuts/".$post['cardID'];
-}
-        if(isset($post['audiofileNew'])) {
-            // create new folder
-            $exec = "rm ".$fileshortcuts."; echo '".$post['audiofileNew']."' > ".$fileshortcuts."; chmod 777 ".$fileshortcuts;
-            exec($exec);
-            $messageSuccess = "<p>DONE ".$post['audiofileNew']."' ".$lang['globalCardId']." '".$post['cardID']."'</p>"
-        }
-
-
-
         if(isset($post['streamURL'])) {
             /*******************************************************
             * Stream URL to be created
             */
             // 20200512 included code from removed the old include('inc.processAddNewStream.php');
-
+            
             // create new folder
             $streamfolder = $Audio_Folders_Path."/".$post['audiofolderNew']."/";
             $exec = "mkdir -p '".$streamfolder."'";
             exec($exec);
-
             // New folder is created so we link a RFID to it. Write $post['audiofolderNew'] to cardID file in shortcuts
             $exec = "rm ".$fileshortcuts."; echo '".$post['audiofolderNew']."' > ".$fileshortcuts."; chmod 777 ".$fileshortcuts;
             exec($exec);
-
+            
             // figure out $streamfile depending on $post['streamType']
             switch($post['streamType']) {
             	case "spotify":
@@ -235,7 +223,7 @@ if($post['delete'] == "delete") {
                 default:
                     $streamfile = "url.txt";
             }
-
+            
             // write $post['streamURL'] to $streamfile and make accessible to anyone
             $exec = "echo '".$post['streamURL']."' > '".$streamfolder."/".$streamfile."'; sudo chmod -R 777 '".$streamfolder."'";
             exec($exec);
@@ -247,15 +235,15 @@ if($post['delete'] == "delete") {
             * RFID triggers system commands
             */
             // 20200512 included code from removed the old include('inc.processAddTriggerCommand.php');
-
+            
             // Replace the potential existing RFID value with the posted one
             //print $post['cardID']."->".$post['TriggerCommand'];
             $fillRfidArrAvailWithUsed[$post['TriggerCommand']] = $post['cardID'];
-
+            
             /******************************************
             * Create new conf file based on posted values
             */
-
+            
             // copy sample file to conf file
             exec("cp ../settings/rfid_trigger_play.conf.sample ../settings/rfid_trigger_play.conf; chmod 777 ../settings/rfid_trigger_play.conf");
             // replace posted values in new conf file
@@ -267,13 +255,13 @@ if($post['delete'] == "delete") {
             }
             // success message
             $messageSuccess = $lang['cardRegisterTriggerSuccess']." ".$post['TriggerCommand'];
-        }
+        }        
         elseif(isset($post['YTstreamURL'])) {
             /*******************************************************
             * YouTube Download
             */
             // 20200512 included code from removed the old include('inc.processAddYT.php');
-
+            
             if(isset($post['audiofolderNew'])) {
                 // create new folder
                 $exec = "mkdir --parents '".$Audio_Folders_Path."/".$post['audiofolderNew']."'; chmod 777 '".$Audio_Folders_Path."/".$post['audiofolderNew']."'";
@@ -294,7 +282,7 @@ if($post['delete'] == "delete") {
             exec($exec);
             // success message
             $messageSuccess = $lang['cardRegisterDownloadingYT'];
-        }
+        } 
         elseif(isset($post['audiofolder']) && trim($post['audiofolder']) != "false") {
             /*******************************************************
             * connect card with existing audio folder
