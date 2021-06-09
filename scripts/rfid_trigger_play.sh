@@ -356,8 +356,11 @@ done
                 echo "DOSSIER"
                 echo $DOSSIER
                 DOSSIER=$(cat ${PATHDATA}/../shared/CHOIX_LANGUES.txt)
-                RESULT=$(cat ${PATHDATA}/../shared/audiofolders/${DOSSIER}/${FOLDERORCMD}) #WE DETECTED A COMMAND STRING SO WE REPLACE THE WILDCARD WITH THE LANGUAGE STRING
-                fichierA_Lire=$($RESULT | sed -e "s/$(DOSSIER)/LANGAGE/g")
+                RESULT=$(cat ${PATHDATA}/../shared/audiofolders/${DOSSIER}/${FOLDERORCMD})
+                echo "RESULT"
+                echo "$RESULT"
+                 #WE DETECTED A COMMAND STRING SO WE REPLACE THE WILDCARD WITH THE LANGUAGE STRING
+                #fichierA_Lire=$($RESULT | sed -e "s/$(DOSSIER)/LANGAGE/g")
                 omxplayer fichierA_Lire;
               fi
 fi
