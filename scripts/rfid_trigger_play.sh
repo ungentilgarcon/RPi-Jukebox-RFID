@@ -348,12 +348,14 @@ done
                 #WE DETECTED A  LANGUAGE STRING SO WE NEED TO CHANGE THE FOLDER VARIABLE
                 echo "DETECTED A LANGUAGE"
                 export DOSSIER=$FOLDERORCMD;
+                echo "$DOSSIER">>${PATHDATA}/../shared/CHOIX_LANGUES.txt
                 echo "DOSSIER"
                 echo $DOSSIER
               else
                 echo "DETECTED A FILE TO PLAY/MP"
                 echo "DOSSIER"
                 echo $DOSSIER
+                DOSSIER=$(cat ${PATHDATA}/../shared/CHOIX_LANGUES.txt)
                 RESULT=$(cat ${PATHDATA}/../shared/audiofolders/${DOSSIER}/${FOLDERORCMD}) #WE DETECTED A COMMAND STRING SO WE REPLACE THE WILDCARD WITH THE LANGUAGE STRING
                 fichierA_Lire=$($RESULT | sed -e "s/$(DOSSIER)/LANGAGE/g")
                 omxplayer fichierA_Lire;
