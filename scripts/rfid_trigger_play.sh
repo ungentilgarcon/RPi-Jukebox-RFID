@@ -347,8 +347,7 @@ done
               then
                 #WE DETECTED A  LANGUAGE STRING SO WE NEED TO CHANGE THE FOLDER VARIABLE
                 echo "DETECTED A LANGUAGE"
-                DOSSIER=$FOLDERORCMD;
-                export $DOSSIER
+                export DOSSIER=$FOLDERORCMD;
                 echo "DOSSIER"
                 echo $DOSSIER
               else
