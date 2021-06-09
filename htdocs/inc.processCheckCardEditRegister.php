@@ -307,7 +307,7 @@ if($post['delete'] == "delete") {
             // success message
             $messageSuccess = "<p>".$lang['cardRegisterFolder2Card']."  ".$lang['globalFolder']." '".$post['audiofolderNew']."' ".$lang['globalCardId']." '".$post['cardID']."'</p>";
         }
-    } elseif(isset($post['audiofileNew']) && trim($post['audiofileNew']) != "") {
+    } elseif(isset($post['audiofileNew']) && trim($post['audiofileNew']) != "false") {
             // create new folder
             $exec = "rm ".$fileshortcuts."; echo '".$post['audiofileNew']."' > ".$fileshortcuts."; chmod 777 ".$fileshortcuts;
             exec($exec);
