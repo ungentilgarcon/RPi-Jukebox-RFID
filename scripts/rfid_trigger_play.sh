@@ -348,7 +348,7 @@ done
                 #WE DETECTED A  LANGUAGE STRING SO WE NEED TO CHANGE THE FOLDER VARIABLE
                 echo "DETECTED A LANGUAGE"
                 export DOSSIER=$FOLDERORCMD;
-                echo "$DOSSIER">>${PATHDATA}/../shared/CHOIX_LANGUES.txt
+                echo "$DOSSIER">${PATHDATA}/../shared/CHOIX_LANGUES.txt
                 echo "DOSSIER"
                 echo $DOSSIER
               else
@@ -359,7 +359,8 @@ done
                 echo $DOSSIER
                 echo "{FOLDERORCMD}"
                 echo "${FOLDERORCMD}"
-                RESULT=$(cat ${PATHDATA}/../shared/audiofolders/${DOSSIER}/${FOLDERORCMD})
+                echo "${PATHDATA}/../shared/audiofolders/${DOSSIER}/$FOLDERORCMD"
+                RESULT=$(cat ${PATHDATA}/../shared/audiofolders/${DOSSIER}/$FOLDERORCMD)
                 echo "RESULT"
                 echo $RESULT
                 fichierA_Lire=$RESULT
