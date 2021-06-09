@@ -352,7 +352,7 @@ done
                 echo $DOSSIER
               else
                 echo "DETECTED A FILE TO PLAY/MP"
-                RESULT=$(cat $PATHDATA/../shared/audiofolders/$FOLDERORCMD/url.txt) #WE DETECTED A COMMAND STRING SO WE REPLACE THE WILDCARD WITH THE LANGUAGE STRING
+                RESULT=$(cat $PATHDATA/../shared/audiofolders/$DOSSIER/$FOLDERORCMD) #WE DETECTED A COMMAND STRING SO WE REPLACE THE WILDCARD WITH THE LANGUAGE STRING
                 fichierA_Lire=$($RESULT | sed -e "s/$(DOSSIER)/LANGAGE/g")
                 omxplayer fichierA_Lire;
               fi
