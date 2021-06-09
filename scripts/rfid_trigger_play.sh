@@ -354,11 +354,12 @@ done
               else
                 echo "DETECTED A FILE TO PLAY/MP"
                 echo "DOSSIER"
-                echo $DOSSIER
+                #echo $DOSSIER
                 DOSSIER=$(cat ${PATHDATA}/../shared/CHOIX_LANGUES.txt)
+                echo $DOSSIER
                 RESULT=$(cat ${PATHDATA}/../shared/audiofolders/${DOSSIER}/${FOLDERORCMD})
                 echo "RESULT"
-                echo "$RESULT"
+                echo $RESULT
                  #WE DETECTED A COMMAND STRING SO WE REPLACE THE WILDCARD WITH THE LANGUAGE STRING
                 #fichierA_Lire=$($RESULT | sed -e "s/$(DOSSIER)/LANGAGE/g")
                 omxplayer fichierA_Lire;
