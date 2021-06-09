@@ -1,7 +1,7 @@
 #from https://www.raspberrypi.org/forums/viewtopic.php?t=151850
 
 
-in /boot/config.txt :
+## in /boot/config.txt :
 
 
 dtoverlay=i2s-mmap
@@ -10,7 +10,7 @@ dtoverlay=hifiberry-dac
 dtparam=spi=on
 
 
-in /etc/asound.conf :
+## in /etc/asound.conf :
 
 pcm.hifiberry {
     type softvol
@@ -35,7 +35,7 @@ pcm.softvol {
 }
 
 
-in .asoundrc
+## in ~/.asoundrc
 
 pcm.!default {
 	type plug
