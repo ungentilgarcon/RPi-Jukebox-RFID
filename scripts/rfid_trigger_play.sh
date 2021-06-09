@@ -348,6 +348,8 @@ done
                 #WE DETECTED A  LANGUAGE STRING SO WE NEED TO CHANGE THE FOLDER VARIABLE
                 echo "DETECTED A LANGUAGE"
                 DOSSIER=$FOLDERORCMD;
+                echo "DOSSIER"
+                echo $DOSSIER
               else
                 echo "DETECTED A FILE TO PLAY/MP"
                 RESULT=$(cat $PATHDATA/../shared/audiofolders/$FOLDERORCMD/url.txt) #WE DETECTED A COMMAND STRING SO WE REPLACE THE WILDCARD WITH THE LANGUAGE STRING
