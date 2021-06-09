@@ -360,13 +360,14 @@ done
                 echo "{FOLDERORCMD}"
                 echo "${FOLDERORCMD}"
                 echo "${PATHDATA}/../shared/audiofolders/${DOSSIER}/$FOLDERORCMD"
-                RESULT=$(cat ${PATHDATA}/../shared/audiofolders/${DOSSIER}/$FOLDERORCMD)
+                #RESULT=$(cat ${PATHDATA}/../shared/audiofolders/${DOSSIER}/$FOLDERORCMD)
+                RESULT=${PATHDATA}/../shared/audiofolders/${DOSSIER}/$FOLDERORCMD
                 echo "RESULT"
                 echo $RESULT
                 fichierA_Lire=$RESULT
                  #WE DETECTED A COMMAND STRING SO WE REPLACE THE WILDCARD WITH THE LANGUAGE STRING
                 #fichierA_Lire=$($RESULT | sed -e "s/$(DOSSIER)/LANGAGE/g")
-                omxplayer fichierA_Lire;
+                omxplayer $RESULT;
               fi
 fi
 esac
