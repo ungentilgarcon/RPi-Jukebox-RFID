@@ -331,7 +331,7 @@ if [ "$CARDID" ]; then
 
                  #printf '%s\n' "${LANGUESARRAY[@]}" | grep -q -P '^$(FOLDERORCMD)$';
 
-             if ! grep -q .mp3 "$FOLDERORCMD"; then
+             if [[ "$FOLDERORCMD" != *".mp3"* ]]; then
 
 
 
