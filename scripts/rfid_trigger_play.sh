@@ -34,12 +34,7 @@ PATHDATA="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 
 ###ICI ON CREE UN INDEX DES LANGUES PARLEES
-fileItemString=$(cat  $PATHDATA/../shared/langues.txt |tr "\n" " ")
-echo fileItemString
-echo $fileItemString
-LANGUESARRAY=($fileItemString)
-echo LANGUESARRAY
-echo $LANGUESARRAY
+
 #############################################################
 # $DEBUG TRUE|FALSE
 # Read debug logging configuration file
