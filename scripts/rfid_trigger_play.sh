@@ -327,24 +327,14 @@ if [ "$CARDID" ]; then
 
             then
               FOLDERORCMD=`cat $PATHDATA/../shared/shortcuts/$CARDID`
-              for ELEMENT in ${LANGUESARRAY[@]}
-              do
-                echo File: $ELEMENT.
-              done
-##NEED FIXING
-DOS=false
-for i in "${LANGUESARRAY[@]}"
-do
-if [ "$i" == "$FOLDERORCMD" ] ; then
-DOS=true
-echo "Found"
-fi
-done
 
 
                  #printf '%s\n' "${LANGUESARRAY[@]}" | grep -q -P '^$(FOLDERORCMD)$';
-             if [ "$DOS" = true ]
-              then
+
+             if ! grep -q .mp3 "$FOLDERORCMD"; then
+
+
+
                 #WE DETECTED A  LANGUAGE STRING SO WE NEED TO CHANGE THE FOLDER VARIABLE
                 echo "DETECTED A LANGUAGE"
                 export DOSSIER=$FOLDERORCMD;
