@@ -150,7 +150,7 @@ if(!empty($_FILES['importFileUpload'])) {
             if($_POST['importFileOverwrite'] != "commands") {
                 // create audio files
                 foreach ($rfidPostedAudio as $shortcutId => $shortcutFolder) {
-                    $exec = "echo array(\"".$shortcutFolder."\") > ../shared/shortcuts/".$shortcutId;
+                    $exec = "echo \"".$shortcutFolder."\" > ../shared/shortcuts/".$shortcutId;
                     exec($exec);
                 }
                 exec("chmod 777 ../shared/shortcuts/*");

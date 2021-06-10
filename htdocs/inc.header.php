@@ -268,10 +268,6 @@ if(isset($_POST['audiofolder']) && $_POST['audiofolder'] != "" && $_POST['audiof
 if(isset($_POST['audiofolderNew']) && $_POST['audiofolderNew'] != "" && $_POST['audiofolderNew'] != "false") {
     $post['audiofolderNew'] = $_POST['audiofolderNew'];
 }
-if(isset($_POST['audiofileNew']) && $_POST['audiofileNew'] != "" && $_POST['audiofileNew'] != "false") {
-    $post['audiofileNew'] = $_POST['audiofileNew'];
-}
-
 if(isset($_POST['YTstreamURL']) && $_POST['YTstreamURL'] != "") {
     $post['YTstreamURL'] = $_POST['YTstreamURL'];
 }
