@@ -10,7 +10,7 @@ RemainAfterExit=true
 WorkingDirectory=/home/pi/RPi-Jukebox-RFID
 ExecStartPre=/home/pi/RPi-Jukebox-RFID/scripts/playout_controls.sh -c=setvolumetostartup
 ExecStart=/bin/sleep 2
-ExecStartPost=/usr/bin/mpg123 /home/pi/RPi-Jukebox-RFID/shared/startupsound.mp3
+ExecStartPost=/usr/bin/mpg123 -a d plughw:0,0 /home/pi/RPi-Jukebox-RFID/shared/startupsound.mp3
 
 [Install]
 WantedBy=multi-user.target

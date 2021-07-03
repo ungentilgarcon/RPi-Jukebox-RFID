@@ -5,7 +5,7 @@
 PATHDATA="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 ###########################################################
-# Read global configuration file (and create is not exists) 
+# Read global configuration file (and create is not exists)
 # create the global configuration file from single files - if it does not exist
 if [ ! -f $PATHDATA/../settings/global.conf ]; then
     . /home/pi/RPi-Jukebox-RFID/scripts/inc.writeGlobalConfig.sh
@@ -21,8 +21,8 @@ cat $PATHDATA/../settings/global.conf
 echo "${AUDIOVOLSTARTUP} is the mpd startup volume"
 
 ####################################
-# make playists, files and folders 
-# and shortcuts 
+# make playists, files and folders
+# and shortcuts
 # readable and writable to all
 sudo chmod -R 777 ${AUDIOFOLDERSPATH}
 sudo chmod -R 777 ${PLAYLISTSFOLDERPATH}
@@ -41,11 +41,11 @@ while [ "$STATUS" != "ACTIVE" ]; do STATUS=$(echo -e status\\nclose | nc -w 1 lo
 # play startup sound
 mpgvolume=$((32768*${AUDIOVOLSTARTUP}/100))
 echo "${mpgvolume} is the mpg123 startup volume"
-/usr/bin/mpg123 -f -${mpgvolume} /home/pi/RPi-Jukebox-RFID/shared/startupsound.mp3
+/usr/bin/mpg123 -a d plughw:0,0 -f -${mpgvolume} /home/pi/RPi-Jukebox-RFID/shared/startupsound.mp3
 
 #######################
 # re-scan music library
-mpc rescan 
+mpc rescan
 
 #######################
 # read out wifi config?
@@ -61,6 +61,3 @@ if [ -f $PATHDATA/../settings/bluetooth-sink-switch ]; then
 	$PATHDATA/../components/bluetooth-sink-switch/bt-sink-switch.py speakers
     fi
 fi
-
-
-
