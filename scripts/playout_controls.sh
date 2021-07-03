@@ -222,7 +222,7 @@ case $COMMAND in
         SHUFFLE_STATUS=$(echo -e status\\nclose | nc -w 1 localhost 6600 | grep -o -P '(?<=random: ).*')
         if [ "$SHUFFLE_STATUS" == 1 ] ; then  mpc random off; fi
         sleep 1
-        /usr/bin/mpg123 ${PATHDATA}/../shared/shutdownsound.mp3
+        /usr/bin/mpg123 -a d plughw:0,0  ${PATHDATA}/../shared/shutdownsound.mp3
         sleep 3
         ${POWEROFFCMD}
         ;;
@@ -282,7 +282,7 @@ case $COMMAND in
 			# schedule shutdown after VALUE minutes
 			echo "${PATHDATA}/playout_controls.sh -c=shutdownsilent" | at -q q now + ${VALUE} minute
 		fi
-		;;			
+		;;
     reboot)
         if [ "${DEBUG_playout_controls_sh}" == "TRUE" ]; then echo "   ${COMMAND}" >> ${PATHDATA}/../logs/debug.log; fi
         ${PATHDATA}/resume_play.sh -c=savepos && mpc clear

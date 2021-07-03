@@ -4,7 +4,7 @@ $output = [];
 // Get status and current track details. Note: a more PHPish version with fsockopen etc.
 // fails if mpd is busy e.g. loading a playlist.
 $status = trim( shell_exec("echo 'status\ncurrentsong\nclose' | nc -w 1 localhost 6600 ") );
-/**
+/**/
 if($debug == "true") {
     print "<pre>"; print $status; print "</pre>";
 }
